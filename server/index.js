@@ -19,7 +19,8 @@ const ContactModel = require('./models/ContactModel')
 
 const app = express();
 app.use(cors({
-    origin: ['http://localhost:3000', 'http://localhost:3001'],
+    // origin: ['http://localhost:3000', 'http://localhost:3001'],
+    origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:5173'],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
@@ -184,7 +185,8 @@ app.post("/create", upload.single('file'), (req, res) => {
          desc: req.body.desc,
          file: req.file.filename,
          category: req.body.category,
-         email: req.body.email,       
+         email: req.body.email,   
+        username: req.body.username,
 
     })
     .then(result => res.json({status: "success", result}))
@@ -210,6 +212,15 @@ app.post("/contactus", async (req, res) => {
     }
   });
 
+  app.get("/get_contactus", async (req, res) => {
+    try {
+      const messages = await ContactModel.find({});
+    
+      res.json(messages);
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  });
 
 
 // this form is also correct

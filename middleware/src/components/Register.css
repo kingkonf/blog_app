@@ -1,0 +1,60 @@
+.div1 {
+    height: 700px; /* Fill the viewport height */
+    width: 99%;
+    /* border: 0.3px double; */
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .div2 {
+    border: 0.3px double;
+    background-color: lightblue;
+    padding: 30px; /* Add padding for content spacing */
+    width: 40%; /* Set a maximum width for larger screens */
+    margin: 0 auto; /* Center the form horizontally */
+  }
+  
+  .h2 {
+    text-align: center; /* Center the heading */
+    font-size: 2rem; /* Adjust font size for readability */
+  }
+  
+  .input1 {
+    padding: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 100%;
+    border: 0.1px solid black;
+  }
+  
+  .label1 {
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
+    display: block; /* Ensure labels take up full width */
+    margin-bottom: 5px;
+  }
+  
+  .p1 {
+    text-align: center; /* Center the "Already have an account?" text */
+    font-size: 1.5rem; /* Adjust font size */
+    margin-top: 15px; /* Add spacing above the login link */
+  }
+  
+  @media screen and (max-width: 1600px) {
+    .div2 {
+      width: 80%;
+    }   
+    .div1{
+        width: 100%;
+    }
+  
+    .h2 {
+      font-size: 1.8rem; /* Adjust heading size for smaller screens */
+    }
+  
+    .label1 {
+      font-size: 1rem; /* Further reduce label font size */
+    }
+  }
+  
